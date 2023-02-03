@@ -1,54 +1,40 @@
-# Astro Starter Kit: Basics
+# About
 
-```
-npm create astro@latest -- --template basics
-```
+# Octkit Datas
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+<table id='octokit-table'>
+  <tr id='header'>
+    <th>name</th>
+    <th>app</th>
+    <th>image</th>
+  </tr>
+  <tr>
+    <td>Goodboy Effect</td>
+    <td>https://nemutas.github.io/goodboy-effect/</td>
+    <td>https://user-images.githubusercontent.com/46724121/216673686-978f8957-6374-486d-ab90-df10f396e0b3.jpg</td>
+  </tr>
+  <tr>
+    <td>Deer</td>
+    <td>https://nemutas.github.io/deer/</td>
+    <td>https://user-images.githubusercontent.com/46724121/216673896-c152656d-6f92-4cfe-9ce7-9265f458d814.jpg</td>
+  </tr>
+  <tr>
+    <td>Ascii Art</td>
+    <td>https://nemutas.github.io/ascii-art/</td>
+    <td>https://user-images.githubusercontent.com/46724121/216674057-5e69560b-f95a-480e-833d-3e6bde99d3dc.jpg</td>
+  </tr>
+  <tr>
+    <td>Contoured Surface</td>
+    <td>https://nemutas.github.io/contoured-surface/</td>
+    <td>https://user-images.githubusercontent.com/46724121/216674220-481cb06a-0720-4bc6-a026-9c50c6beb691.jpg</td>
+  </tr>
+  <tr>
+    <td>Gray-Scott model</td>
+    <td>https://nemutas.github.io/gray-scott/</td>
+    <td>https://user-images.githubusercontent.com/46724121/216674278-82ecd0c3-d9db-44dc-82bc-56636259a0e7.jpg</td>
+  </tr>
+</table>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
