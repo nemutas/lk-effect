@@ -1,0 +1,35 @@
+---
+import '../styles/global.scss';
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<script>
+	import gsap from 'gsap'
+	import ScrollToPlugin from 'gsap/ScrollToPlugin'
+
+	gsap.registerPlugin(ScrollToPlugin)
+
+	window.addEventListener('wheel', e => {
+		const target = window.scrollX + (0 < e.deltaY ? 300 : -300)
+		gsap.to(window, { scrollTo: { x: target }, duration: 0.6, ease: 'power2.out' })
+	})
+</script>

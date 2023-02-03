@@ -1,0 +1,43 @@
+---
+import {HTMLAttributes} from 'astro/types'
+interface Props extends HTMLAttributes<'ul'> {}
+
+const {...attrs}  = Astro.props
+---
+
+<ul {...attrs}>
+  <li>
+    <img src="images/wlop1.jpg" alt=""/>
+    <h2>wlop1</h2>
+  </li>
+  <li>
+    <img src="images/3.webp" alt=""/>
+    <h2>image 3</h2>
+  </li>
+  <li>
+    <img src="images/5.webp" alt=""/>
+    <h2>image 5</h2>
+  </li>
+  <li>
+    <img src="images/7.webp" alt=""/>
+    <h2>image 7</h2>
+  </li>
+</ul>
+
+<style lang="scss">
+  ul {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  img {
+    height: 50vh;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    opacity: 0;
+  }
+  h2 {
+    font-size: 30px;
+  }
+</style>

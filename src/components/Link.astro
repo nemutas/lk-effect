@@ -1,0 +1,55 @@
+---
+import { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'a'> {
+  children: any
+}
+
+const { ...attrs } = Astro.props;
+---
+
+<a {...attrs}>
+  <slot/>
+</a>
+
+<style lang="scss">
+  @use '../styles/mixins/medias.scss' as *;
+
+  a {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    font-size: 15px;
+    color: #000;
+    opacity: 0.5;
+    @include sp {
+      font-size: 20px;
+    }
+
+    @include hoverable {
+      transition: opacity 0.3s ease;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #000;
+        transform: scale(0, 1);
+        transform-origin: right top;
+        transition: transform 0.3s;
+      }
+
+      &:hover {
+        opacity: 1;
+
+        &::after {
+          transform-origin: left top;
+          transform: scale(1, 1);
+        }
+      }
+    }
+  }
+</style>

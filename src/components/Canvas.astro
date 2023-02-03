@@ -1,0 +1,22 @@
+<div class="three-container"></div>
+
+<style lang="scss">
+  .three-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  import { TCanvas } from "../scripts/webgl/TCanvas"
+
+  const canvas = new TCanvas(document.querySelector('.three-container'))
+
+  window.addEventListener('beforeunload', () => {
+    canvas.dispose()
+  })
+</script>
