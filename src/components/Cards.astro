@@ -1,11 +1,24 @@
 ---
 import {HTMLAttributes} from 'astro/types'
-interface Props extends HTMLAttributes<'ul'> {}
+import { fetchDatas } from '../scripts/fetcher';
 
+const datas = await fetchDatas()
+
+interface Props extends HTMLAttributes<'ul'> {}
 const {...attrs}  = Astro.props
 ---
 
 <ul {...attrs}>
+  {
+    datas.map(data => (
+      <li>
+        <a href={data.app} target="_blank" rel="noopener noreferrer">
+          <img src={data.image} alt=""/>
+          <h2>{data.name}</h2>
+        </a>
+      </li>    
+    ))
+  }
   <li>
     <img src="images/wlop1.jpg" alt=""/>
     <h2>wlop1</h2>
