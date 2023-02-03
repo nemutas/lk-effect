@@ -2,8 +2,8 @@
 
 # Octkit Datas
 
-<table>
-  <tr>
+<table id='octokit-table'>
+  <tr id='header'>
     <th>name</th>
     <th>app</th>
     <th>image</th>
