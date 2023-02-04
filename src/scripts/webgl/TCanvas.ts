@@ -43,6 +43,7 @@ export class TCanvas {
       },
       vertexShader,
       fragmentShader,
+      transparent: true,
     })
 
     imageDatas.forEach((data) => {
