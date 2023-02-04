@@ -9,12 +9,6 @@ export async function fetchDatas() {
     owner: 'nemutas',
     repo: 'lk-effect',
     path: 'README.md',
-    headers: {
-      // 'Access-Control-Allow-Origin': '*',
-      // accept: 'Access-Control-Allow-Origin',
-      // 'user-agent': 'Access-Control-Allow-Origin',
-      // authorization: 'Access-Control-Allow-Origin',
-    },
   })
   const decodedData = Buffer.from((data as any).content, (data as any).encoding).toString()
   // console.log(decodedData)

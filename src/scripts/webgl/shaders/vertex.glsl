@@ -7,8 +7,9 @@ varying float vShift;
 void main() {
   vUv = uv;
   vec3 pos = position;
+  vec3 worldPos = (modelMatrix * vec4(pos, 1.0)).xyz;
   float dist = 1.0 - smoothstep(0.0, 0.7, abs(pos.y));
-  float n = cnoise((modelMatrix * vec4(pos, 1.0)).xyz * 2.0);
+  float n = cnoise(worldPos * 2.0);
   vShift = uSpeed * (dist + n) * 0.001;
   pos.x -= vShift;
 

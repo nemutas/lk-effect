@@ -1,0 +1,59 @@
+---
+interface Props {
+  src: string
+  href: string
+  title: string
+}
+
+const {src, href, title} = Astro.props
+---
+
+<li class="card">
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    <img src={src} alt=""/>
+    <h2>{title}</h2>
+  </a>
+</li>
+
+<style lang="scss">
+  img {
+    // height: 50vh;
+    width: min(50rem, 50vh);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    opacity: 0;
+  }
+  h2 {
+    --progress: 0%;
+    width: fit-content;
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #530 var(--progress), #0003 var(--progress));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    &.leave {
+      background: linear-gradient(to left, #530 var(--progress), #0003 var(--progress));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+</style>
+
+<script>
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+
+  gsap.registerPlugin(ScrollTrigger)
+
+  const cards = document.querySelectorAll('.card')
+  cards.forEach(card => {
+    const title = card.querySelector('h2')
+    card.addEventListener('mouseenter', () => {
+      title.classList.remove('leave')
+      gsap.to(title, {'--progress': '100%', duration: 0.5, ease: 'power2.out'})
+    })
+    card.addEventListener('mouseleave', () => {
+      title.classList.add('leave')
+      gsap.to(title, {'--progress': '0%', duration: 0.5, ease: 'power2.out'})
+    })
+  })
+</script>

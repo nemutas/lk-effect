@@ -1,0 +1,60 @@
+<div class="heading">
+  <div class='texts'>
+    <span>Using</span>
+    <span style="margin-left: 7rem;">Astro</span>
+    <span style="margin-left: 14rem;">Three.js</span>
+    <span style="margin-left: 21rem;">Gsap</span>
+  </div>
+</div>
+
+<div class="heading-space">
+
+</div>
+
+<style lang="scss">
+	.heading {
+    z-index: 10;
+    position: relative;
+		height: 100%;
+		width: 100%;
+		display: grid;
+		place-items: center;
+	}
+	.texts {
+		& span {
+			display: block;
+			font-size: 7rem;
+			line-height: 1;
+			letter-spacing: 0.5rem;
+			margin-bottom: 2.5rem;
+		}
+	}
+  .heading-space {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to right, #f8f5ee, transparent);
+  }
+</style>
+
+<script>
+  import gsap from 'gsap'
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
+
+  const texts = document.querySelectorAll('.heading > .texts > span')
+
+  texts.forEach(text => {
+    ScrollTrigger.create({
+      trigger: text,
+      start: 'left left+=30',
+      end: () => `left+=${window.screenX + text.getBoundingClientRect().width} left+=30`,
+      horizontal: true,
+      scrub: true,
+      pin: true,
+      pinSpacing: false,
+    })
+  })
+
+</script>

@@ -22,7 +22,7 @@ export class TCanvas {
 
   private init() {
     gl.setup(this.container)
-    gl.camera.position.z = 1
+    gl.camera.position.z = 5
   }
 
   private async createObjects() {
@@ -110,7 +110,7 @@ export class TCanvas {
     this.images.children.forEach((child) => {
       const uniforms = ((child as THREE.Mesh).material as THREE.ShaderMaterial).uniforms
       if (child === intersectImage) {
-        gsap.to(uniforms.uProgress, { value: 1, duration: 1.5, ease: 'power1.out' })
+        gsap.to(uniforms.uProgress, { value: 1, duration: 2, ease: 'power1.out' })
       } else {
         gsap.to(uniforms.uProgress, { value: 0, duration: 0.8, ease: 'power1.out' })
       }

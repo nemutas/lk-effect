@@ -1,41 +1,23 @@
 ---
 import {HTMLAttributes} from 'astro/types'
-import { fetchDatas } from '../scripts/fetcher';
-
-const datas = await fetchDatas()
+import Card from './Card.astro';
 
 interface Props extends HTMLAttributes<'ul'> {}
 const {...attrs}  = Astro.props
+
+const imageIds = ['bg8o3ZWwY3E', 'aeNg4YA41P8', 'L6_MQVHz3Eg', '0p0lVOLdVmg', '1MHWTwXL62w']
 ---
 
 <ul {...attrs}>
   {
-    datas.map(data => (
-      <li>
-        <a href={data.app} target="_blank" rel="noopener noreferrer">
-          <img src={data.image} alt=""/>
-          <h2>{data.name}</h2>
-        </a>
-      </li>    
+    imageIds.map(id => (
+      <Card 
+        title={id}
+        src={`https://source.unsplash.com/${id}`}
+        href={`https://unsplash.com/photos/${id}`}
+      />
     ))
   }
-  
-  <li>
-    <img src="images/wlop1.jpg" alt=""/>
-    <h2>wlop1</h2>
-  </li>
-  <li>
-    <img src="images/3.webp" alt=""/>
-    <h2>image 3</h2>
-  </li>
-  <li>
-    <img src="images/5.webp" alt=""/>
-    <h2>image 5</h2>
-  </li>
-  <li>
-    <img src="images/7.webp" alt=""/>
-    <h2>image 7</h2>
-  </li>
 </ul>
 
 <style lang="scss">
@@ -44,14 +26,5 @@ const {...attrs}  = Astro.props
     display: flex;
     flex-direction: row;
     gap: 30px;
-  }
-  img {
-    height: 50vh;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    opacity: 0;
-  }
-  h2 {
-    font-size: 30px;
   }
 </style>

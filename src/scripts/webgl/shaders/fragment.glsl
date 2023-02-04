@@ -39,16 +39,15 @@ void main() {
   // texture参照
   // vec4 tex = texture2D(tImage, uv - distortion - wave);
   float tR = texture2D(tImage, uv - distortion - wave + vShift * 0.0).r;
-  float tG = texture2D(tImage, uv - distortion - wave + vShift * 0.1).g;
-  float tB = texture2D(tImage, uv - distortion - wave + vShift * 0.2).b;
+  float tG = texture2D(tImage, uv - distortion - wave + vShift * 0.05).g;
+  float tB = texture2D(tImage, uv - distortion - wave + vShift * 0.10).b;
   vec3 color = vec3(tR, tG, tB);
   // 輝度
   float l = luma(color) * parabola(uProgress, 3.0);
   color *= (1.0 + l * 5.0);
 
-  // float gray = luma(tex.rgb);
-  // vec3 final = mix(tex.rgb, vec3(gray), d);
+  float gray = luma(color);
+  color = mix(color, vec3(gray), d - abs(vShift) * 5.0);
     
-  // gl_FragColor = vec4(final, 1.0);
   gl_FragColor = vec4(color, 1.0);
 }
