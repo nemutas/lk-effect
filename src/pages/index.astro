@@ -1,31 +1,32 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Link from '../components/Link.astro';
-import Cards from '../components/Cards.astro';
-import Canvas from '../components/Canvas.astro';
-import Heading from '../components/Heading.astro';
+import Layout from '../layouts/Layout.astro'
+import Link from '../components/Link.astro'
+import Cards from '../components/Cards.astro'
+import Canvas from '../components/Canvas.astro'
+import Heading from '../components/Heading.astro'
 ---
 
 <Layout title="L.K. Effect">
-	<main>
-		<Canvas />
-		<Link href="https://github.com/nemutas/lk-effect" target="_blank" rel="noopener noreferrer">Github</Link>
-		<Heading />
-		<Cards class="cards" />
-	</main>
+  <main>
+    <Canvas />
+    <Link href="https://github.com/nemutas/lk-effect" target="_blank" rel="noopener noreferrer">Github</Link>
+    <Heading />
+    <Cards class="cards" />
+  </main>
 </Layout>
 
 <style lang="scss">
-	main {
-		position: relative;
-		width: fit-content;
-		width: 100%;
-		height: 100%;
-		display: grid;
-		grid-template-columns: 50vw 1fr;
-		align-items: center;
-	}
-	.cards {
-		padding-right: 30px;
-	}
+  main {
+    position: relative;
+    width: fit-content;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+    align-items: center;
+  }
+  .cards {
+    padding-right: 30px;
+    margin-left: -2rem;
+  }
 </style>
