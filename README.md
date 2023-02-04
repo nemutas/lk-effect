@@ -3,4 +3,4 @@ The hover animation of the image is inspired by [L. K.](https://leonidkostetskyi
 
 https://nemutas.github.io/lk-effect/
 
-<img src='https://user-images.githubusercontent.com/46724121/216754674-efa1b0b1-33a5-44b1-8d57-7a6bed84b4f5.png' width='800' />
+<img src='https://user-images.githubusercontent.com/46724121/216755917-cd15e950-282e-4125-aa64-a59d23473122.jpg' width='800' />
