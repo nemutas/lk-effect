@@ -27,9 +27,10 @@ export class TCanvas {
 
   private async createObjects() {
     const loader = new THREE.TextureLoader()
-    const cardImages = document.querySelectorAll<HTMLImageElement>('.cards img')
+    const cardImages = document.querySelectorAll<HTMLElement>('.cards .img')
+
     const imageDatas = await Promise.all(
-      [...cardImages].map(async (card) => ({ texture: await loader.loadAsync(card.src), element: card })),
+      [...cardImages].map(async (card) => ({ texture: await loader.loadAsync(card.dataset.imgSrc), element: card })),
     )
 
     const material = new THREE.ShaderMaterial({
@@ -76,7 +77,7 @@ export class TCanvas {
   private syncImages() {
     this.images.children.forEach((child) => {
       const mesh = child as THREE.Mesh
-      const element = mesh.userData.element as HTMLImageElement
+      const element = mesh.userData.element as HTMLElement
       const rect = element.getBoundingClientRect()
       const width = (rect.width / gl.size.width) * 2
       const height = (rect.height / gl.size.height) * 2
